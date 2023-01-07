@@ -1,0 +1,70 @@
+@import '../constants.scss';
+
+.sideContainer {
+  height: calc(100vh - 3.75rem);
+  border-right: 4px solid var(--color-secondary);
+  overflow-y: scroll;
+  background-color: var(--color-primary);
+  display: block;
+  width: 250px;
+  &.isMobile {
+    position: fixed;
+    top: 3.75rem;
+    left: -100%;
+    z-index: 1000;
+    transition: 850ms;
+  }
+  &.opened {
+    left: 0;
+    transition: 350ms;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    a {
+      text-decoration: none;
+      color: var(--color-accent2);
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 29px;
+      letter-spacing: 0.05em;
+      li {
+        height: 50px;
+        width: 220px;
+        margin: 10px 15px;
+        display: flex;
+        align-items: center;
+        border-radius: 15px;
+        svg {
+          margin-right: 15px;
+          margin-left: 5px;
+          padding: 5px;
+        }
+        path {
+          fill: var(--color-accent2);
+        }
+      }
+      &:hover {
+        color: var(--font-secondary);
+        li {
+          background-color: var(--color-secondary);
+          path {
+            fill: var(--font-secondary);
+          }
+        }
+      }
+    }
+    .active {
+      color: var(--font-secondary);
+      background-color: var(--color-secondary);
+      path {
+        fill: var(--font-secondary);
+      }
+    }
+  }
+}
+
+.sideContainer ul a li svg{
+  font-size: 41px !important;
+}

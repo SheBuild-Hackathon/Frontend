@@ -1,0 +1,200 @@
+@import '../constants.scss';
+
+.attendenceContainer {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  overflow-y: scroll;
+  color: var(--font-primary);
+  .subCardContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .subjectCard {
+      width: 15rem;
+      margin: 0.6rem;
+      padding: 0.8rem;
+      height: 18rem;
+      border-radius: 1rem;
+      background-color: var(--color-primary);
+      color: var(--color-accent1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        box-shadow: var(--box-shad);
+        transform: translateZ(20px);
+      }
+      h4{
+        font-size: 1.2rem;
+        text-align: center;
+      }
+      .progressBarContainer {
+        width: 10rem;
+        height: 10rem;
+        margin: 1rem;
+        .CircularProgressbar-path {
+          stroke: var(--color-accent1);
+        }
+        .CircularProgressbar-trail {
+          stroke: var(--color-secondary);
+        }
+        .CircularProgressbar-text {
+          fill: var(--color-accent1);
+        }
+      }
+    }
+    .subCardsAttendence {
+      background-color: var(--color-accent1);
+      margin: 10px;
+      padding: 10px;
+      height: auto;
+      color: #e6e6e6;
+      border-radius: 10px;
+      svg {
+        margin: 4px;
+      }
+      &:hover {
+        svg {
+          background-color: var(--color-secondary);
+          border-radius: 50%;
+          path {
+            stroke: var(--color-primary);
+          }
+        }
+      }
+    }
+  }
+
+  .subjectsContainer {
+    // width: 100%;
+    margin-bottom: 1.4rem;
+    margin-left: 1.4rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: var(--font-primary);
+    justify-content: space-between;
+    .subjects {
+      width: 15rem;
+      height: auto;
+      border-radius: 15px;
+        font-size: 1rem;
+  
+      padding: 10px;
+      color: var(--color-primary);
+      background-color: var(--color-accent1);
+      word-wrap: normal;
+
+      display: block;
+      position: relative;
+      padding-left: 40px;
+      cursor: pointer;
+      font-size: 22px;
+      input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+
+      /* Create a custom checkbox */
+      .checkmark {
+        position: absolute;
+        top: 4vh;
+        left: 0.5vw;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        background-color: #eee;
+      }
+
+      /* On mouse-over, add a grey background color */
+      &:hover input ~ .checkmark {
+        background-color: var(--color-primary);
+      }
+
+      /* When the checkbox is checked, add a blue background */
+      input:checked ~ .checkmark {
+        // z-index: 2;
+        background-color: #61b15a;
+      }
+
+      /* Create the checkmark/indicator (hidden when not checked) */
+      .checkmark:after {
+        content: '';
+        position: absolute;
+        display: none;
+      }
+
+      /* Show the checkmark when checked */
+      input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+      /* Style the checkmark/indicator */
+      .checkmark:after {
+        left: 10px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 992px) {
+  .attendenceContainer {
+    .subCardContainer {
+      justify-content: center;
+      .subjectCard {
+        justify-content: center;
+        box-shadow: var(--box-shad);
+
+      }
+    }
+  
+    .subjectsContainer {
+      // width: 100%;
+      margin-bottom: 1.4rem;
+      margin-left: 1.4rem;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      color: var(--font-primary);
+      justify-content: space-between;
+      .subjects {
+        width: 15rem;
+        height: auto;
+        border-radius: 15px;
+          font-size: 1rem;
+    
+        padding: 10px;
+        color: var(--color-primary);
+        background-color: var(--color-accent1);
+        word-wrap: normal;
+  
+        display: block;
+        position: relative;
+        padding-left: 40px;
+        cursor: pointer;
+        font-size: 22px;
+        input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+        }
+      }
+    }
+  }
+}
