@@ -32,6 +32,7 @@ import DisplayTT from '../../components/Dashboard/DisplayTT/DisplayTT'
 import FormTT from '../../components/Dashboard/FormTT/FormTT'
 import LabTitle from '../../components/Dashboard/Vlab/LabTitles'
 import SideBarLab from '../../components/Dashboard/Vlab/SideBarLab'
+import MarksheetGeneration from '../../components/Dashboard/Marksheet/MarksheetGeneration';
 
 
 import { ToastContainer } from 'react-toastify';
@@ -40,7 +41,7 @@ import AdminRoute from '../../components/Routehandler/AdminRoute';
 
 const Dashboard = () => {
   const path =
-    '/(|Profile|LiveClass|RecordedLectures|Upload|Attendence|Assignments|StudyMaterial|Doubts|TimeTable|register|Vlab|DisplayTT|makeTT)/';
+    '/(|Profile|LiveClass|RecordedLectures|Upload|Attendence|Assignments|StudyMaterial|Doubts|TimeTable|register|Vlab|DisplayTT|makeTT|MarksheetGeneration)/';
 
 
   return (
@@ -63,6 +64,7 @@ const Dashboard = () => {
                 component={Player}
               />
               <AdminRoute path="/Upload" component={Upload} />
+              <AdminRoute exact path="/MarksheetGeneration" component={MarksheetGeneration} />
               <Route exact path="/Attendence" component={Attendence} />
               <Route
                 exact
